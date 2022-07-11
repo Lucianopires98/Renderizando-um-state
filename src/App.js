@@ -1,53 +1,36 @@
-import React, { Component } from 'react';
-import './App.css';
-import Laranja from './img laranja/laranja.jpg'
-
+import React, { Component } from "react";
+import "./App.css";
+import Laranja from "./img laranja/laranja.jpg";
 
 class App extends Component {
+  state = {
+    aluno: {
+      nome: "Luciano",
+      idade: 23,
+      comidafavorita: "estrogonofe",
+      musicas: ["Matue - De Alta", "Bk - Caminhos", "Ret - Good Vibe"],
+    },
+  };
 
- state = {
+  render() {
+    return (
+      <div>
+        <h1>Meu nome é {this.state.aluno.nome}</h1>
 
-  aluno:[
-   {
-    nome:'Luciano',
-    idade: 23,
-    comidafavorita: 'estrogonofe',
-    musicas:['Matue - De Alta', 'Bk - Caminhos', 'Ret - Good Vibe']
+        <h2>Tenho {this.state.aluno.idade} anos</h2>
+
+        <h3>Minha comida favorita é {this.state.aluno.comidafavorita}</h3>
+
+        <ul>
+          <li>{this.state.aluno.musicas[0]}</li>
+          <li>{this.state.aluno.musicas[1]}</li>
+          <li>{this.state.aluno.musicas[2]}</li> 
+        </ul>
+        <div>Bônus</div>
+        <img src={Laranja} alt="laranja" />
+      </div>
+    );
   }
-
-  ]
-
- }
-
-render(){
-  return(
-    <div>
-
-      <h1>Luciano</h1>
-
-      <h2>23</h2>
-
-      <h3>estrogonofe</h3>
-
-      <ul>
-        <li>Matue - De Alta </li>
-        <li>Bk - Caminhos</li>
-        <li>Ret - Good Vibe</li>
-      </ul>
- 
-       <img src= {Laranja} />
-
-    </div>
-  )
 }
-
-}
-
-
-
-
-
-
-
 
 export default App;
